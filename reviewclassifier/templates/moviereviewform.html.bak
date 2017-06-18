@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Movie Review Classification</title>
+ </head>
+ <body>
+ <fieldset border='2'>
+    <legend align="center"><text style="font-size:50px;font-family:Impact;color:SaddleBrown">Movie Review Classifier</text></legend>
+        <fieldset>
+    <legend align="center"><h1> Enter your movie review:</h1></legend>
+    {% from "_formhelpers.html" import render_field %}
+
+  <form method=post action="/outcomes" align="center">
+     <dl>
+	   {{ render_field(form.moviereview, cols='20', rows='5') }}
+	 </dl>
+	 <div>
+	   <input type=submit value='Submit' name='submit'>
+	 </div>
+  </form>
+  </fieldset>
+  </fieldset>
+ </body>
+</html>

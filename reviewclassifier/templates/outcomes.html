@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Movie Review Classification</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}">
+ </head>
+ <body>
+  <fieldset class="field_set">
+    <legend align="center"><text style="font-size:50px;font-family:Impact;color:SaddleBrown">Movie Review Classifier</text></legend>
+        <fieldset>
+    <legend align="center"><h1>Your movie review:</h1></legend>
+      <div align="center"><strong>"</strong> {{ content }} <strong>"</strong></div>
+      <fieldset>
+    <legend align="center"><h2>Prediction:</h2></legend>
+  <div>This movie review is <strong>{{ prediction }}</strong>
+			(probability: {{ probability }}%).
+	</div>
+
+  <div id='button'>  
+  <form action="/thanks" method="post">    
+      <input type=hidden value='{{ prediction }}' name='prediction'> <input type=hidden value='{{ content }}' name='review'>
+  </form> 
+  </div>
+
+  <div id='button'>  
+  <form action="/">    
+   <input type=submit value='Submit another review'>  
+  </form> 
+  </div>
+  </fieldset>
+  </fieldset>
+  </fieldset>
+ </body>
+</html>
